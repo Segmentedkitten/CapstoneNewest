@@ -1,0 +1,604 @@
+﻿using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
+using System.Collections.Generic;
+using Rewired;
+
+public class PlayerScript : MonoBehaviour {
+	
+	
+	private Player player; // The Rewired Player
+	
+	public int Player_ID;
+
+    [HeaderAttribute("Stat Settings")]
+	public float speed = 6; // movement speed
+	public float totalHpAmount = 500;	
+    public float defense = 0; // scale from 0 to 1, 1 being the highest
+    public float power = 50; // Damage scaling
+    public float rechargeSpeed = 1;
+    public float healingPower = 50;
+
+
+    [HeaderAttribute("Dmg/Heal Scaling")] // from 0-1 (percentages) - So if they have 200 power and the basic_scale is .4f the basic attack will do 80 damage
+    public float basic_scale = 1;
+    public float a1_dmg_scale = 1;
+    public float a1_heal_scale = 1;
+    public float a2_dmg_scale = 1;
+    public float a2_heal_scale = 1;
+    public float a31_dmg_scale = 1;
+    public float a31_heal_scale = 1;
+    public float a32_dmg_scale = 1;
+    public float a32_heal_scale = 1;
+
+    [HeaderAttribute("Debugging/Testing")]
+    public bool isDead = false; //Player will still be 0hp most likely and just die again FYI
+    public bool canMove = true;
+    public bool canUpdateControls = true;
+    public bool canPause = true;
+    public ENUMS.ROLETYPE playerRole; // To test other A3
+
+    [HideInInspector] 
+    public Inventory inventory;
+    [HideInInspector]
+    public bool initializeEnd = false;
+    [HideInInspector] 
+    public bool collidingWithItem = false;
+    [HideInInspector] 
+    public List<GameObject> objects;
+    [HideInInspector] 
+    List<GameObject> objectsToRemove = new List<GameObject>();
+    [HideInInspector]
+    public Image timerFill;
+    [HideInInspector]
+    public Image timerSectionFill;
+    [HideInInspector]
+    public Image healthFill;
+   
+
+	protected float healthScale = 1;
+	private bool removeHealth = false;
+	bool addHealth = false;
+    public Animator topAnimator;
+    public Animator leftAnimator;
+    public Animator rightAnimator;
+	
+    bool runOnce = false;
+    bool onItem = false;	
+	bool rechargeTimer = false;
+    protected float currentDefense;
+    protected float currentPower;
+    protected float currentSpeed;
+    protected float currentHealingPower;
+
+    public bool facingRight = true;
+    bool wasMoving = false;
+    bool startWalk = false;
+    bool endWalk = false;
+    public bool canFlip = true;
+    GameObject spriteRendering;
+
+    cameraBehaviour camBehaviour;
+    Camera mainCamera;
+   
+    public Player Player
+    {
+        get { return player; }
+
+    }
+	
+	
+	protected virtual void Awake()
+	{
+       
+		this.transform.position = new Vector3(0,0,0);
+		this.transform.localScale = Vector3.one / 6.0f;
+        
+      
+		
+		
+        player = ReInput.players.GetPlayer(Player_ID);
+       
+		
+	}
+
+    public virtual void initializePlayer()
+    {
+      
+       
+        topAnimator = this.transform.GetChild(2).FindChild("Top_Anim").GetComponent<Animator>();
+        leftAnimator = this.transform.GetChild(2).FindChild("Left_Anim").GetComponent<Animator>();
+        rightAnimator = this.transform.GetChild(2).FindChild("Right_Anim").GetComponent<Animator>();
+        spriteRendering = this.transform.GetChild(2).gameObject;
+        spriteRendering.transform.localScale = new Vector3(spriteRendering.transform.localScale.x * -1, spriteRendering.transform.localScale.y, spriteRendering.transform.localScale.z );
+
+       
+    }
+
+    public virtual void initializePlayerCombat()
+    {
+        GameObject canvasID;
+        // transform.localScale = new Vector3(-0.1666f, .1666f, .1666f);
+        canvasID = GameObject.Find("Player" + (Player_ID + 1) + "UI");
+        timerFill = canvasID.transform.FindChild("TimerInnerFill").GetComponent<Image>();
+        timerSectionFill = canvasID.transform.FindChild("TimerSectionFill").GetComponent<Image>();
+        healthFill = canvasID.transform.FindChild("Health").GetComponent<Image>();
+
+        camBehaviour = GameObject.Find("cameraFollow").transform.GetComponent<cameraBehaviour>();
+        mainCamera = camBehaviour.transform.GetChild(0).GetComponent<Camera>();
+
+
+    }
+
+
+	
+	public void updateCharges(float amount)
+	{
+		timerFill.fillAmount += amount;
+		
+	}
+	
+	void Update()
+	{
+
+
+        if (!runOnce)
+        {
+            player = ReInput.players.GetPlayer(Player_ID);
+            runOnce = true;
+        }
+		
+		if(removeHealth)
+		{
+            if (!isDead)
+            {
+                if (healthFill.fillAmount > healthScale && healthScale >= 0)
+                {
+                    healthFill.fillAmount -= 1 * Time.deltaTime;
+                }
+
+                else
+                {
+                    removeHealth = false;
+                }
+            }
+		}
+
+		if(addHealth)
+		{
+            if (!isDead)
+            {
+                if (healthFill.fillAmount < healthScale && healthScale <= 1)
+                {
+                    healthFill.fillAmount += 1 * Time.deltaTime;
+                }
+
+                else
+                {
+                    addHealth = false;
+                }
+            }
+		}
+
+        if(healthScale <= 0)
+        {
+            die();
+        }
+
+        if (canPause) 
+        {
+
+			if(player.GetButtonDown("start"))
+			{
+				if(gameManager.pauseTag == "")
+				{
+					gameManager.pauseTag = Player_ID.ToString();
+				}
+				
+				if(gameManager.pauseTag == Player_ID.ToString ())
+				{
+                    gameManager.Instance.player = Player;
+					gameManager.Instance.pauseGame();
+				}
+
+			}
+
+		}
+
+
+		if(!gameManager.Instance.Paused)
+		{
+			gameManager.pauseTag = "";
+            if (canUpdateControls)
+            {
+                updateControls();
+            }
+            if (canMove)
+            {
+                movement();
+            }
+          
+
+			if(gameManager.Instance.inCombat)
+			{
+
+				updateTimer();	
+			}
+		}
+        else
+        {
+            GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+        }
+
+        if (camBehaviour.setBox)
+        {
+            Vector2 cameraBound = mainCamera.ScreenToWorldPoint(new Vector2(mainCamera.pixelWidth, mainCamera.pixelHeight));
+
+            float posX = this.transform.position.x;
+            float posY = this.transform.position.y;
+
+            posX = Mathf.Clamp(posX, mainCamera.ScreenToWorldPoint(new Vector3(0, 0, 0)).x + (.16666666666f), cameraBound.x - (.16666666666f));
+            posY = Mathf.Clamp(posY, mainCamera.ScreenToWorldPoint(new Vector3(0, 0, 0)).y + (.16666666666f ), cameraBound.y - (.16666666666f));
+
+            this.transform.position = new Vector3(posX, posY);
+        }
+	}
+
+    protected virtual void die()
+    {
+        Color myColor = this.GetComponent<SpriteRenderer>().color;
+        isDead = true;
+        this.GetComponent<SpriteRenderer>().color = new Color(myColor.r, myColor.g, myColor.b, .3f);
+        canUpdateControls = false;
+
+    }
+
+    protected virtual void alive()
+    {
+        Color myColor = this.GetComponent<SpriteRenderer>().color;
+        isDead = false;
+        this.GetComponent<SpriteRenderer>().color = new Color(myColor.r, myColor.g, myColor.b, 1);
+        canUpdateControls = true;
+    }
+
+
+	
+	protected virtual void movement()
+	{
+        
+        
+        if (!gameManager.Instance.usingKeyboard)
+        {
+            float moveHorizontal = player.GetAxis("moveHorizontal") * speed;
+            float moveVertical = player.GetAxis("moveVertical") * speed;
+            GetComponent<Rigidbody2D>().velocity = new Vector2(moveHorizontal, moveVertical);
+            if (canFlip)
+            {
+                if (moveHorizontal < -0.15f && facingRight)
+                {
+                    spriteRendering.transform.localScale = new Vector3(6, 6, 6);
+                    if (transform.GetChild(0).name == "meleeObject")
+                    {
+                        transform.GetChild(0).localScale = new Vector3(-4, 3.5f, 1);
+                    }
+                    facingRight = !facingRight;
+
+                }
+                else if (moveHorizontal > 0.15f && !facingRight)
+                {
+
+                    spriteRendering.transform.localScale = new Vector3(-6, 6, 6);
+                    if (transform.GetChild(0).name == "meleeObject")
+                    {
+                        transform.GetChild(0).localScale = new Vector3(4, 3.5f, 1);
+                    }
+                    facingRight = !facingRight;
+                }
+            }
+            
+        }
+        else
+        {
+            Vector2 movePos = Vector2.zero;
+            if(Input.GetKey(KeyCode.W))
+            {
+                movePos.y += speed;
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                movePos.y -= speed;
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                movePos.x += speed;
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                movePos.x -= speed;
+            }
+
+            GetComponent<Rigidbody2D>().velocity = movePos;
+
+        }
+
+        if( GetComponent<Rigidbody2D>().velocity.magnitude > .5)
+        {
+            if (!startWalk)
+            {
+                leftAnimator.SetTrigger("StartWalk");
+                rightAnimator.SetTrigger("StartWalk");
+                startWalk = true;
+            }
+            leftAnimator.SetBool("isWalking", true);
+            endWalk = false;
+            rightAnimator.SetBool("isWalking", true);
+            topAnimator.SetBool("isWalking", true);
+            wasMoving = true;
+            
+            
+
+        }
+        else if (GetComponent<Rigidbody2D>().velocity.magnitude > -.5 && GetComponent<Rigidbody2D>().velocity.magnitude < .5 && wasMoving)
+        {
+            if(!endWalk)
+            {
+                leftAnimator.SetTrigger("EndWalk");
+                rightAnimator.SetTrigger("EndWalk");
+                endWalk = true;
+            }
+            
+            leftAnimator.SetBool("isWalking", false);
+            startWalk = false;
+            rightAnimator.SetBool("isWalking", false);
+            topAnimator.SetBool("isWalking", false);
+            wasMoving = false;
+        }
+		
+	}
+	
+	
+	void updateTimer() 
+	{
+        // This is the code for recharcing the player charges
+		if (rechargeTimer) {//Change vv this number to increase/decrease the recharge rate
+			timerFill.fillAmount += .15f * Time.deltaTime * .5f;
+			                //       ^^
+			if (timerFill.fillAmount >= 1) {
+				rechargeTimer = false;
+			}
+		} else if (timerFill.fillAmount < 1) {
+			rechargeTimer = true;
+		}
+		
+		
+		
+		//Fills up one charge when the yellow reaches a segment
+		if (timerFill.fillAmount < .33f)
+		{
+			timerSectionFill.fillAmount = 0f;
+		}
+		if (timerFill.fillAmount >= .33f && timerFill.fillAmount < .66f)
+		{
+			timerSectionFill.fillAmount = .33f;
+		}
+		if (timerFill.fillAmount >= .66f && timerFill.fillAmount < 1f)
+		{
+			timerSectionFill.fillAmount = .66f;
+		}
+		if (timerFill.fillAmount >= 1f)
+		{
+			timerSectionFill.fillAmount = 1f;
+		}
+	}
+	
+	protected virtual void updateControls()
+	{
+      
+            if (gameManager.Instance.inCombat)
+            {
+                if (player.GetButtonDown("rightButton") && timerFill.fillAmount >= .33f)
+                {
+                    abilityOne();
+                    
+
+
+                }
+                else if (player.GetButtonDown("leftButton") && timerFill.fillAmount >= .66f)
+                {
+                    abilityTwo();
+                   
+
+                }
+                else if (player.GetButtonDown("topButton") && timerFill.fillAmount >= .99f)
+                {
+                    abilityThree();
+                    
+
+                }
+                else if (player.GetButtonDown("bottomButton"))
+                {
+                    basicAttack();
+                    topAnimator.SetTrigger("basicAttack");
+                }
+                else if (player.GetButtonDown("start"))
+                {
+
+                }
+                else if(Input.GetKeyDown(KeyCode.Escape))
+                {
+                    Application.Quit();
+                }
+            }        
+            
+        
+
+
+
+		
+		/*if (player.GetButtonDown ("select")) {
+
+			gameManager.Instance.changeLevel(gameManager.Instance.LevelOn + 1);
+					
+
+		}*/
+		
+	}
+
+    public virtual void meleeComplete() 
+    {
+        // Just so the melee attack can report when its finished, only use in child classes
+
+
+       
+    }
+
+    protected virtual void passive() { }
+	
+	public virtual void takeDamage(float amount)
+	{
+        //Code to remove HP in relation to the image scale
+        amount = amount * (1 - (defense)); // Defense calculations
+		float percentRemove;
+		percentRemove = amount / totalHpAmount;
+		healthScale -= percentRemove;
+		removeHealth = true;
+		
+	}
+
+
+	
+	public void heal(float amount)
+	{
+        //code to add HP in relation to image scale
+		float percentAdd;
+		percentAdd = amount / totalHpAmount;
+		healthScale += percentAdd;
+		addHealth = true;
+	}
+
+	public virtual void startCombat()
+	{
+        // Mostly for initializing targeting if the class has it
+        //Only use in child classes
+	}
+
+	public virtual void endCombat()
+	{
+        //Used for garbage collection when combat ends
+        //Only use in child classes
+
+	}
+	
+	protected virtual void basicAttack() 
+	{
+        
+	}
+	
+	protected virtual void abilityOne() 
+	{ 
+		updateCharges (-.33f); // Updates the charges when an ability is pressed
+        //the override may not call base.Update(); if they want to delay charge usage
+	}
+	
+	protected virtual void abilityTwo() 
+	{ 
+		updateCharges (-.66f);
+	}
+	
+	protected virtual void abilityThree() 
+	{ 
+		updateCharges (-.99f);
+	}
+
+	protected virtual void abilityThree1(){ }
+
+
+
+    //Used for skill shots and aiming
+    //Only use in child classes
+	protected virtual void aim () {}
+
+	protected virtual void shoot() {}
+
+	
+	
+	protected virtual void OnCollisionEnter2D(Collision2D other)
+	{
+		
+		
+	}
+
+    protected virtual void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "item")
+        {
+            Inventory.Instance.AddItem(other.GetComponent<item>());
+
+            other.GetComponent<item>().removeItem();
+        }
+        if(other.tag == "enemyCollider")
+        {
+            
+
+        }
+
+        if(other.tag == "sceneEnd")
+        {
+            Application.LoadLevel(Application.loadedLevel + 1);
+        }
+    }
+
+    protected virtual void OnTriggerExit2D(Collider2D other)
+    {
+
+      
+    }
+
+    public bool checkObject(GameObject currentObj)
+    {
+        foreach (GameObject obj in objects)
+        {
+            if (currentObj == obj)
+            {
+                return false;
+            }
+        }
+
+        objects.Add(currentObj);
+        return true;
+   
+        if (currentObj.tag == "lightAOE")
+        {
+            //currentObj.transform.GetChild(1).GetComponent<aoeParticle>().aquaRef.checkCrit();
+            //heal(75 * currentObj.transform.GetChild(1).GetComponent<aoeParticle>().aquaRef.critAmount);
+        }
+
+        return true;
+    }
+
+    public void removeObject(GameObject curObject)
+    {
+        foreach (GameObject obj in objects)
+        {
+            if (curObject == obj)
+            {
+                objectsToRemove.Add(curObject);
+            }
+        }
+
+        foreach (GameObject toRemove in objectsToRemove)
+        {
+            objects.Remove(toRemove);
+        }
+
+        objectsToRemove.Clear();
+    }
+
+    protected virtual void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.tag == "healingCircle")
+        {
+            heal(1);
+        }
+    }	
+}

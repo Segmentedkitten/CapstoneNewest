@@ -1,0 +1,132 @@
+F:\brys swag stuff yo - pls no\capstoneTest_v7\obj\Debug\Assembly-CSharp-Editor.csprojResolveAssemblyReference.cache
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\Assembly-CSharp-Editor.dll
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\Assembly-CSharp-Editor.pdb
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\Mono.Cecil.dll
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\Rewired_Core.dll
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\Rewired_Editor.dll
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\UnityEditor.Advertisements.dll
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\UnityEditor.Android.Extensions.dll
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\UnityEditor.dll
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\UnityEditor.Graphs.dll
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\UnityEditor.iOS.Extensions.dll
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\UnityEditor.iOS.Extensions.Xcode.dll
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\UnityEditor.LinuxStandalone.Extensions.dll
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\UnityEditor.Metro.Extensions.dll
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\UnityEditor.Networking.dll
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\UnityEditor.OSXStandalone.Extensions.dll
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\UnityEditor.SamsungTV.Extensions.dll
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\UnityEditor.Tizen.Extensions.dll
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\UnityEditor.UI.dll
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\UnityEditor.WebGL.Extensions.dll
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\UnityEditor.WindowsStandalone.Extensions.dll
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\UnityEditor.WP8.Extensions.dll
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\UnityEngine.dll
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\UnityEngine.Networking.dll
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\UnityEngine.UI.dll
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\Unity.SerializationLogic.dll
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\Unity.DataContract.dll
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\Unity.UNetWeaver.dll
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\nunit.framework.dll
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\Unity.CecilTools.dll
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\Mono.Cecil.Pdb.dll
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\Mono.Cecil.Mdb.dll
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\Assembly-CSharp.pdb
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\UnityEngine.xml
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\UnityEditor.xml
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\UnityEditor.Advertisements.xml
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\UnityEngine.UI.xml
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\UnityEditor.UI.xml
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\UnityEngine.Networking.xml
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\UnityEditor.Networking.xml
+F:\brys swag stuff yo - pls no\capstoneTest_v7\Temp\bin\Debug\Rewired_Core.xml
+F:\brys swag stuff yo - pls no\capstoneTest_v7\obj\Debug\Assembly-CSharp-Editor.dll
+F:\brys swag stuff yo - pls no\capstoneTest_v7\obj\Debug\Assembly-CSharp-Editor.pdb
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\Assembly-CSharp-Editor.dll
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\Assembly-CSharp-Editor.pdb
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\Mono.Cecil.dll
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\Rewired_Core.dll
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\Rewired_Editor.dll
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\UnityEditor.Advertisements.dll
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\UnityEditor.Android.Extensions.dll
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\UnityEditor.dll
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\UnityEditor.Graphs.dll
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\UnityEditor.iOS.Extensions.dll
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\UnityEditor.iOS.Extensions.Xcode.dll
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\UnityEditor.LinuxStandalone.Extensions.dll
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\UnityEditor.Metro.Extensions.dll
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\UnityEditor.Networking.dll
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\UnityEditor.OSXStandalone.Extensions.dll
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\UnityEditor.SamsungTV.Extensions.dll
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\UnityEditor.Tizen.Extensions.dll
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\UnityEditor.UI.dll
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\UnityEditor.WebGL.Extensions.dll
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\UnityEditor.WindowsStandalone.Extensions.dll
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\UnityEditor.WP8.Extensions.dll
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\UnityEngine.dll
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\UnityEngine.Networking.dll
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\UnityEngine.UI.dll
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\Unity.SerializationLogic.dll
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\Unity.DataContract.dll
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\Unity.UNetWeaver.dll
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\nunit.framework.dll
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\Unity.CecilTools.dll
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\Mono.Cecil.Pdb.dll
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\Mono.Cecil.Mdb.dll
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\Assembly-CSharp.pdb
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\UnityEngine.xml
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\UnityEditor.xml
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\UnityEditor.Advertisements.xml
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\UnityEngine.UI.xml
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\UnityEditor.UI.xml
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\UnityEngine.Networking.xml
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\UnityEditor.Networking.xml
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\Temp\bin\Debug\Rewired_Core.xml
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\obj\Debug\Assembly-CSharp-Editor.csprojResolveAssemblyReference.cache
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\obj\Debug\Assembly-CSharp-Editor.dll
+F:\SPRING2016\Capstone Files\Capstone v3\capstoneTest_v7\obj\Debug\Assembly-CSharp-Editor.pdb
+F:\CapstoneProject\Capstone v5\Game\obj\Debug\Assembly-CSharp-Editor.csprojResolveAssemblyReference.cache
+F:\CapstoneProject\Capstone v5\Game\obj\Debug\Assembly-CSharp-Editor.dll
+F:\CapstoneProject\Capstone v5\Game\obj\Debug\Assembly-CSharp-Editor.pdb
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\Assembly-CSharp-Editor.dll
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\Assembly-CSharp-Editor.pdb
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\Mono.Cecil.dll
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\Rewired_Core.dll
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\Rewired_Editor.dll
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\UnityEditor.Advertisements.dll
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\UnityEditor.Android.Extensions.dll
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\UnityEditor.dll
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\UnityEditor.Graphs.dll
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\UnityEditor.iOS.Extensions.dll
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\UnityEditor.iOS.Extensions.Xcode.dll
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\UnityEditor.LinuxStandalone.Extensions.dll
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\UnityEditor.Metro.Extensions.dll
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\UnityEditor.Networking.dll
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\UnityEditor.OSXStandalone.Extensions.dll
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\UnityEditor.SamsungTV.Extensions.dll
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\UnityEditor.Tizen.Extensions.dll
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\UnityEditor.UI.dll
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\UnityEditor.WebGL.Extensions.dll
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\UnityEditor.WindowsStandalone.Extensions.dll
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\UnityEditor.WP8.Extensions.dll
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\UnityEngine.dll
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\UnityEngine.Networking.dll
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\UnityEngine.UI.dll
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\Unity.SerializationLogic.dll
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\Unity.DataContract.dll
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\Unity.UNetWeaver.dll
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\nunit.framework.dll
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\Unity.CecilTools.dll
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\Mono.Cecil.Pdb.dll
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\Mono.Cecil.Mdb.dll
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\Assembly-CSharp.pdb
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\UnityEngine.xml
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\UnityEditor.xml
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\UnityEditor.Advertisements.xml
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\UnityEngine.UI.xml
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\UnityEditor.UI.xml
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\UnityEngine.Networking.xml
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\UnityEditor.Networking.xml
+F:\CapstoneProject\Capstone v5\Game\Temp\bin\Debug\Rewired_Core.xml
